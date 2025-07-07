@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>CleanShot Voice Preview</title>
+        <title>Your White-Labeled Voice Preview</title>
       </Head>
 
       <div
@@ -18,7 +18,7 @@ export default function Home() {
       >
         {/* Container for overlaying elements */}
         <div style={{ position: 'relative', width: '400px', height: '700px' }}>
-          {/* Vapi Agent iframe */}
+          {/* Your Vapi Agent iframe */}
           <iframe
             src="https://app.vapi.ai/assistant/cbe25350-4d7a-4224-87c7-9712a37309c5?showVapiBranding=false&buttonText=Talk%20to%20Donna"
             style={{
@@ -29,12 +29,13 @@ export default function Home() {
               overflow: 'hidden',
             }}
             allow="microphone"
+            id="vapi-frame"
           ></iframe>
 
-          {/* CleanShot Logo (top left) */}
+          {/* Your Logo (top left) */}
           <img
             src="https://i.imgur.com/YIvNQQi.png"
-            alt="CleanShot Logo"
+            alt="Your Logo"
             style={{
               position: 'absolute',
               top: '16px',
@@ -47,7 +48,7 @@ export default function Home() {
             }}
           />
 
-          {/* Custom Button (replaces default Vapi button visually) */}
+          {/* Custom Button (covers Vapi's default button) */}
           <button
             style={{
               position: 'absolute',
@@ -66,7 +67,7 @@ export default function Home() {
               boxShadow: '0 2px 8px rgba(0,0,0,0.14)',
             }}
             onClick={() => {
-              alert('Custom button pressed! You can wire this to postMessage or API actions.');
+              alert('Talk to Donna button pressed! To trigger the assistant, integrate with Vapi API or postMessage.');
             }}
           >
             Talk to Donna
