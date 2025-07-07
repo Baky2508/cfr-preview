@@ -1,57 +1,42 @@
-// pages/index.js (Next.js)
-import Head from 'next/head';
+// pages/index.js
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Cleanshot Voice Agent</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CleanShot Voice Preview</title>
       </Head>
 
-      <div style={{ position: 'relative', width: '100vw', height: '100vh', backgroundColor: '#0f0f0f', overflow: 'hidden' }}>
+      {/* Logo in corner */}
+      <div style={{
+        position: 'fixed',
+        top: '20px',
+        left: '20px',
+        zIndex: 1000
+      }}>
+        <img src="/logo.png" alt="Cleanshot Logo" style={{ width: '120px', height: 'auto' }} />
+      </div>
 
-        {/* Cleanshot Logo */}
-        <img 
-          src="https://i.imgur.com/YIvNQQi.png" 
-          alt="Cleanshot Logo" 
-          style={{
-            position: 'absolute',
-            top: '20px',
-            left: '20px',
-            height: '40px',
-            zIndex: 10
-          }} 
-        />
-
-        {/* Vapi iframe */}
+      {/* Vapi Agent iframe */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        background: '#111'
+      }}>
         <iframe
-          src="https://app.vapi.ai/embed/cbe25350-4d7a-4224-87c7-9712a37309c5?assistantId=286ebc6d-eaf1-4fac-ae2d-cd9765117729"
-          width="100%"
-          height="100%"
-          frameBorder="0"
-          allow="microphone; autoplay"
-          title="Cleanshot Voice Agent"
-        />
-
-        {/* Replace button overlay (optional) */}
-        <div
+          src="https://app.vapi.ai/assistant/cbe25350-4d7a-4224-87c7-9712a37309c5?showVapiBranding=false&buttonText=Talk%20to%20Donna"
           style={{
-            position: 'absolute',
-            bottom: '40px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            backgroundColor: '#fff',
-            color: '#000',
-            padding: '12px 24px',
-            borderRadius: '24px',
-            fontWeight: 'bold',
-            zIndex: 15,
-            pointerEvents: 'none'
+            width: '400px',
+            height: '700px',
+            border: 'none',
+            borderRadius: '12px',
+            overflow: 'hidden'
           }}
-        >
-          Talk to Donna
-        </div>
+          allow="microphone"
+        ></iframe>
       </div>
     </>
   );
