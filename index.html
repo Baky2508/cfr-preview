@@ -1,30 +1,24 @@
-import Head from 'next/head';
-
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Voice Agent Preview</title>
-      </Head>
-
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        background: '#111'
-      }}>
-        <iframe
-          src="https://vapi.ai?demo=true&shareKey=cbe25350-4d7a-4224-87c7-9712a37309c5&assistantId=286ebc6d-eaf1-4fac-ae2d-cd9765117729"
-          style={{
-            width: '400px',
-            height: '700px',
-            border: 'none',
-            borderRadius: '12px'
-          }}
-          allow="microphone"
-        ></iframe>
-      </div>
-    </>
-  );
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donna | CFR Law</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform: scale(1.1);
+      transform-origin: top left;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="https://vapi.ai/?demo=true&shareKey=cbe25350-4d7a-4224-87c7-9712a37309c5&assistantId=286ebc6d-eaf1-4fac-ae2d-cd9765117729"></iframe>
+</body>
+</html>
